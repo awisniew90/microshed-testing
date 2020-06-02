@@ -235,6 +235,13 @@ public class ApplicationContainer extends GenericContainer<ApplicationContainer>
             withAppContextRoot("/");
         }
     }
+    
+    @Override
+	public String getHost() {
+    	if (isHollow)
+            return lateBind_ipAddress;
+        return super.getHost();
+    }
 
     @Override
     protected void configure() {

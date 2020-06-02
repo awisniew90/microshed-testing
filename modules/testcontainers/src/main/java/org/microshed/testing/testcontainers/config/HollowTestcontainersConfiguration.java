@@ -88,7 +88,7 @@ public class HollowTestcontainersConfiguration extends TestcontainersConfigurati
                         .filter(c -> !(c instanceof ApplicationContainer))
                         .flatMap(c -> c.getNetworkAliases().stream())
                         .collect(Collectors.toSet());
-        sanitizeEnvVar(containers.app, networkAliases);
+//        sanitizeEnvVar(containers.app, networkAliases);
 
         // Expose any external resources (such as DBs) on fixed exposed ports
         try {
